@@ -47,8 +47,8 @@ def create_view_window():
     view_window = Toplevel()
     view_window.title("View Gambling Prevention Checks")
 
-    # 新しいカレンダーを作成
-    cal = Calendar(view_window, selectmode='none', date_pattern='yyyy-mm-dd')
+    # 新しいカレンダーを作成（showothermonth=False）
+    cal = Calendar(view_window, selectmode='none', date_pattern='yyyy-mm-dd', showothermonth=False, showweeknumbers=False)
     cal.pack(pady=20)
 
     # チェック結果を取得
@@ -77,8 +77,8 @@ def create_ui():
     # SQLiteデータベースの初期設定
     setup_db()
 
-    # カレンダーを作成
-    cal = Calendar(root, selectmode='day', date_pattern='yyyy-mm-dd')
+    # カレンダーを作成（showothermonth=False, showweeknumbers=False）
+    cal = Calendar(root, selectmode='day', date_pattern='yyyy-mm-dd', showothermonth=False, showweeknumbers=False)
     cal.pack(pady=20)
 
     # データを保存するボタン
